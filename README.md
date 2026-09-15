@@ -7,3 +7,10 @@
 - Web Development
 - Git & GitHub
 Welcome to my Portfolio!
+
+# BSc Computer Science Portfolio
+By: Mhoja
+## Project 1: Food Delivery Web App 🍔
+A full-stack web application built with PHP.
+**Features**: User Registration, Login, Food Menu, Order System
+**How to run**: Install on XAMPP and open `login.php` in browser
