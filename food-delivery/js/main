@@ -1,0 +1,50 @@
+/* =========================
+   FOOD DELIVERY SYSTEM JS
+========================= */
+// Wait page load
+document.addEventListener("DOMContentLoaded", function(){
+    console.log("Food Delivery System Loaded 🚀");
+    // =========================
+    // SEARCH FUNCTION (simple filter)
+    // =========================
+    const searchInput = document.querySelector(".search-box input");
+    if(searchInput){
+        searchInput.addEventListener("keyup", function(){
+            let value = this.value.toLowerCase();
+            let foods = document.querySelectorAll(".food-card");
+            foods.forEach(function(card){
+                let title = card.querySelector("h3").innerText.toLowerCase();
+                if(title.includes(value)){
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    }
+    // =========================
+    // ADD TO CART ALERT
+    // =========================
+    const buttons = document.querySelectorAll(".food-card button");
+    buttons.forEach(function(btn){
+        btn.addEventListener("click", function(){
+            let foodName = this.parentElement.querySelector("h3").innerText;
+            alert(foodName + " added to cart 🛒");
+        });
+    });
+    // =========================
+    // SMOOTH SCROLL
+    // =========================
+    const links = document.querySelectorAll("a[href^='#']");
+    links.forEach(link => {
+        link.addEventListener("click", function(e){
+            e.preventDefault();
+            let target = document.querySelector(this.getAttribute("href"));
+            if(target){
+                target.scrollIntoView({
+                    behavior:"smooth"
+                });
+            }
+        });
+    });
+});
